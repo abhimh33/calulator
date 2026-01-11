@@ -89,6 +89,7 @@ class EnhancedCalculator(QMainWindow):
         self.history_list = []
         self.undo_stack = []
         self.redo_stack = []
+        self.dark_mode = True
         
         # History file
         self.history_file = "calculator_history.json"
@@ -179,6 +180,9 @@ class EnhancedCalculator(QMainWindow):
         row6.addWidget(CalcButton("(", lambda: self.append_value("("), "number"))
         row6.addWidget(CalcButton(")", lambda: self.append_value(")"), "number"))
         row6.addStretch()
+        theme_btn = CalcButton("🌙", self.toggle_theme, "function")
+        theme_btn.setMinimumWidth(80)
+        row6.addWidget(theme_btn)
         grid.addLayout(row6)
         
         calc_layout.addLayout(grid)
@@ -506,50 +510,90 @@ class EnhancedCalculator(QMainWindow):
         self.save_history()
     
     def toggle_theme(self):
-        """Toggle dark/light theme"""
-        pass
+        """Toggle between dark and light theme"""
+        self.dark_mode = not self.dark_mode
+        self.apply_theme()
     
     def on_theme_changed(self, theme_name):
         """Change theme by selection"""
         pass
     
     def apply_theme(self):
-        """Apply dark theme to calculator"""
-        self.setStyleSheet("""
-            QMainWindow {
-                background-color: #1a1a1a;
-            }
-            QLineEdit {
-                background-color: #2a2a2a;
-                color: #ffffff;
-                border: 2px solid #3a3a3a;
-                border-radius: 8px;
-                padding: 10px;
-                font-size: 32px;
-                font-weight: bold;
-            }
-            QLabel {
-                color: #ffffff;
-            }
-            QListWidget {
-                background-color: #2a2a2a;
-                color: #ffffff;
-                border: 2px solid #3a3a3a;
-                border-radius: 8px;
-                padding: 8px;
-            }
-            QListWidget::item {
-                padding: 5px;
-                border-radius: 4px;
-            }
-            QListWidget::item:hover {
-                background-color: #3a3a3a;
-            }
-            QListWidget::item:selected {
-                background-color: #FF6B35;
-                color: #ffffff;
-            }
-        """)
+        """Apply dark or light theme to calculator"""
+        if self.dark_mode:
+            # Dark theme
+            self.setStyleSheet("""
+                QMainWindow {
+                    background-color: #1a1a1a;
+                }
+                QLineEdit {
+                    background-color: #2a2a2a;
+                    color: #ffffff;
+                    border: 2px solid #3a3a3a;
+                    border-radius: 8px;
+                    padding: 10px;
+                    font-size: 32px;
+                    font-weight: bold;
+                }
+                QLabel {
+                    color: #ffffff;
+                }
+                QListWidget {
+                    background-color: #2a2a2a;
+                    color: #ffffff;
+                    border: 2px solid #3a3a3a;
+                    border-radius: 8px;
+                    padding: 8px;
+                }
+                QListWidget::item {
+                    padding: 5px;
+                    border-radius: 4px;
+                }
+                QListWidget::item:hover {
+                    background-color: #3a3a3a;
+                }
+                QListWidget::item:selected {
+                    background-color: #FF6B35;
+                    color: #ffffff;
+                }
+            """)
+        else:
+            # Light theme
+            self.setStyleSheet("""
+                QMainWindow {
+                    background-color: #f5f5f5;
+                }
+                QLineEdit {
+                    background-color: #ffffff;
+                    color: #1a1a1a;
+                    border: 2px solid #e0e0e0;
+                    border-radius: 8px;
+                    padding: 10px;
+                    font-size: 32px;
+                    font-weight: bold;
+                }
+                QLabel {
+                    color: #1a1a1a;
+                }
+                QListWidget {
+                    background-color: #ffffff;
+                    color: #1a1a1a;
+                    border: 2px solid #e0e0e0;
+                    border-radius: 8px;
+                    padding: 8px;
+                }
+                QListWidget::item {
+                    padding: 5px;
+                    border-radius: 4px;
+                }
+                QListWidget::item:hover {
+                    background-color: #f0f0f0;
+                }
+                QListWidget::item:selected {
+                    background-color: #FF6B35;
+                    color: #ffffff;
+                }
+            """)
     
     def setup_keyboard(self):
         """Setup keyboard event handling"""
