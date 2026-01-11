@@ -177,12 +177,13 @@ class EnhancedCalculator(QMainWindow):
         # Row 6: ( and )
         row6 = QHBoxLayout()
         row6.setSpacing(8)
-        row6.addWidget(CalcButton("(", lambda: self.append_value("("), "number"))
-        row6.addWidget(CalcButton(")", lambda: self.append_value(")"), "number"))
-        row6.addStretch()
-        theme_btn = CalcButton("🌙", self.toggle_theme, "function")
-        theme_btn.setMinimumWidth(80)
-        row6.addWidget(theme_btn)
+        paren_open = CalcButton("(", lambda: self.append_value("("), "number")
+        paren_close = CalcButton(")", lambda: self.append_value(")"), "number")
+        self.theme_toggle_btn = CalcButton("🌙", self.toggle_theme, "function")
+        
+        row6.addWidget(paren_open, 1)
+        row6.addWidget(paren_close, 1)
+        row6.addWidget(self.theme_toggle_btn, 1)
         grid.addLayout(row6)
         
         calc_layout.addLayout(grid)
@@ -512,6 +513,11 @@ class EnhancedCalculator(QMainWindow):
     def toggle_theme(self):
         """Toggle between dark and light theme"""
         self.dark_mode = not self.dark_mode
+        # Update button icon based on theme
+        if self.dark_mode:
+            self.theme_toggle_btn.setText("🌙")
+        else:
+            self.theme_toggle_btn.setText("☀️")
         self.apply_theme()
     
     def on_theme_changed(self, theme_name):
