@@ -173,6 +173,14 @@ class EnhancedCalculator(QMainWindow):
         row5.addWidget(CalcButton("=", self.calculate, "operator"))
         grid.addLayout(row5)
         
+        # Row 6: ( and )
+        row6 = QHBoxLayout()
+        row6.setSpacing(8)
+        row6.addWidget(CalcButton("(", lambda: self.append_value("("), "number"))
+        row6.addWidget(CalcButton(")", lambda: self.append_value(")"), "number"))
+        row6.addStretch()
+        grid.addLayout(row6)
+        
         calc_layout.addLayout(grid)
         calc_layout.addStretch()
         
