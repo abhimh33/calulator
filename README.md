@@ -1,71 +1,71 @@
-# 💎 Advanced Calculator Pro
+# 💎 Modern Calculator Pro
 
-A comprehensive PyQt5 calculator with scientific functions, memory operations, base conversion, multiple themes, keyboard support, and persistent history.
+A sleek PyQt5 calculator with a classic calculator layout, scientific functions, memory operations, base conversion, dark/light theme toggle, keyboard support, and persistent calculation history.
 
 ## ✨ Features
 
-### **Basic Operations**
-- Addition, Subtraction, Multiplication, Division
-- Power operations (x², x³, x^y)
-- Square root (√), Cube root (³√)
-- Pi (π) constant
+### **Classic Calculator Layout**
+- Clean, intuitive button layout
+- Dark gray number buttons (0-9)
+- Light gray function buttons (C, ÷, %)
+- Orange operator buttons (+, -, ×, =)
+- Parentheses buttons for complex expressions
 
-### **Scientific Functions**
-- **Trigonometric**: sin, cos, tan
-- **Logarithmic**: log₁₀, ln (natural log)
-- **Special**: Factorial (!), e constant, 1/x
-- **Parentheses** support for complex expressions
+### **Basic Operations**
+- Addition (+), Subtraction (-), Multiplication (×), Division (÷)
+- Percentage (%)
+- Decimal support
+- Power operations (x²) via sidebar
+
+### **Scientific Functions** (Right Sidebar)
+- **Trigonometric**: sin, cos, ln
+- **Square Root**: √
+- **Factorial**: !
+- **Power**: x²
+- Easy access from right panel
 
 ### **Memory Functions**
 - M+ (Add to memory)
 - M- (Subtract from memory)
 - MR (Recall memory)
-- MC (Clear memory)
 - Real-time memory display
 
 ### **Base Conversion**
-- Convert to/from Hexadecimal (HEX)
-- Convert to/from Binary (BIN)
-- Convert to/from Octal (OCT)
-- Convert to/from Decimal (DEC)
+- Convert to Hexadecimal (HEX)
+- Convert to Binary (BIN)
+- Convert to Octal (OCT)
+- Quick conversion buttons
 
 ### **History Management**
 - 📊 Full calculation history with timestamps
-- Click any history item to load it
-- Save history to JSON file (persists between sessions)
-- Copy calculations to clipboard
+- Click any history item to load it into display
+- Save history to JSON file (auto-saves, persists between sessions)
+- Copy button to copy selected history
 - Clear history option
+
+### **Dark/Light Theme Toggle**
+- 🌙 **Dark Theme** (Default) - Professional dark background
+- ☀️ **Light Theme** - Clean bright background
+- Toggle button in last row (changes icon based on active theme)
+- All UI elements update instantly
 
 ### **Keyboard Support**
 - Type numbers directly: 0-9
+- Decimal point: .
 - Operators: +, -, *, /
+- Parentheses: ( )
 - Enter/Return: Calculate
 - Backspace: Delete last character
 - Escape: Clear display
 - Ctrl+Z: Undo
 - Ctrl+Y: Redo
-- Parentheses: ( )
-
-### **Undo/Redo**
-- Full undo/redo stack
-- Navigate through calculation history
-- Works with all operations
-
-### **Multiple Themes**
-- 🌙 Dark Blue (default)
-- 🌙 Dark Purple
-- 🌙 Dark Green
-- ☀ Light theme
-- 🌊 Ocean theme
-- Toggle button for quick dark/light switch
-- Theme selector dropdown
 
 ### **Professional UI**
-- Tabbed interface (Basic, Scientific, Advanced)
 - Responsive design
-- Smooth button animations
-- Large, readable display (28pt font)
-- Real-time validation
+- Large, readable display (32pt font)
+- Smooth button interactions with hover effects
+- Intuitive right sidebar with functions and history
+- Clean dark/light themes
 
 ## 📋 Requirements
 
@@ -96,50 +96,54 @@ python calculator.py
 1. Click number buttons to enter values
 2. Click operator buttons (+, -, ×, ÷)
 3. Press = or Enter to calculate
-4. Use DEL to delete last character, C to clear all
-
+4. Use C to clear all, ( ) for complex expressions
 ### **Scientific Mode**
-- Click "Scientific" tab for advanced functions
-- Use sin, cos, tan for trigonometric functions
-- Use log, ln for logarithmic functions
-- Use x^y for any power operation
+- Click function buttons in right sidebar (√, sin, cos, ln, x², !)
+- All functions appear in sidebar panel
+- Example: Click √ → enter 16 → press = → Result: 4
 
 ### **Memory Operations**
-- Click "Advanced" tab
-- Enter a number and click M+ to add to memory
-- Use M- to subtract, MR to recall, MC to clear
+- Enter a number, click M+ to add to memory
+- M- to subtract from memory
+- MR to recall stored value
 - Memory value displayed in real-time
 
 ### **Base Conversion**
-- Enter a number and click HEX, BIN, or OCT to convert
-- Click DEC to convert back to decimal
-- Useful for programming and technical calculations
+- Enter a decimal number
+- Click HEX, BIN, or OCT to convert
+- Result shows in that number base
+- Example: 255 → HEX → 0xff
 
-### **Keyboard Usage**
-- Type directly without clicking buttons
-- Numbers: 0-9
-- Operators: + - * / ( )
-- Calculate: Enter or Return
-- Undo: Ctrl+Z
-- Redo: Ctrl+Y
+### **History Panel**
+- All calculations auto-saved with timestamps
+- Click any history item to reload it
+- Copy button to copy to clipboard
+- Clear button to delete all history
 
-### **History**
-- All calculations automatically saved
-- Click any history item to load it into display
-- Copy button: Copy selected history to clipboard
-- Clear button: Delete all history
-- History persists between sessions (stored in JSON)
+### **Theme Toggle**
+- Click 🌙/☀️ button in last row to switch themes
+- Icon changes between moon (dark) and sun (light)
+- Everything updates instantly
+- Your preference is saved
 
-## 🎨 Theme Selection
+## 🎨 Button Layout
 
-### Method 1: Theme Toggle Button
-- Click the 🌙/☀ button to toggle dark/light
+```
+C      ÷      %      +
+7      8      9      ×
+4      5      6      -
+1      2      3      +
+0           .        =
+(      )           🌙/☀️
+```
 
-### Method 2: Theme Selector
-- Go to "Advanced" tab
-- Use the "Themes" dropdown to select from 5 themes
+**Legend:**
+- **Gray buttons**: Numbers (0-9), Decimal (.), Functions
+- **Light gray buttons**: Clear (C), Division (÷), Percentage (%)
+- **Orange buttons**: Operators (+, -, ×, =)
+- **Last row**: Parentheses and theme toggle
 
-## 🔧 Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts
 
 | Key | Function |
 |-----|----------|
@@ -148,83 +152,80 @@ python calculator.py
 | + - * / | Operators |
 | ( ) | Parentheses |
 | Enter | Calculate |
-| Backspace | Delete last character |
-| Escape | Clear display |
+| Backspace | Delete last |
+| Escape | Clear all |
 | Ctrl+Z | Undo |
 | Ctrl+Y | Redo |
 
-## 📊 Calculation Examples
+## 📊 Example Calculations
 
-| Operation | Input | Result |
-|-----------|-------|--------|
-| Basic | 15 + 25 = | 40 |
-| Power | 2 ^ 10 = | 1024 |
-| Square Root | √16 = | 4 |
-| Sin | sin(π/2) = | 1 |
-| Factorial | 5! = | 120 |
-| Hex Conversion | 255 → HEX | 0xff |
-| Binary | 10 → BIN | 0b1010 |
+| Input | Result |
+|-------|--------|
+| 15 + 25 = | 40 |
+| 10 × 5 = | 50 |
+| 100 ÷ 4 = | 25 |
+| √16 = | 4 |
+| sin(90) = | 1 |
+| 5! = | 120 |
+| 255 → HEX | 0xff |
+| (5 + 3) × 2 = | 16 |
 
 ## 💾 Data Storage
 
-- History is automatically saved to `calculator_history.json`
-- JSON file stores all calculations with timestamps
-- History loads automatically on startup
+- History automatically saved to `calculator_history.json`
+- History loads on startup
+- Theme preference not persisted (resets to dark on restart)
 
 ## 🔒 Security
 
-- `.gitignore` configured to exclude:
-  - Python cache and compiled files
-  - Virtual environments
-  - IDE settings
-  - Log files
-  - Sensitive environment variables
+- `.gitignore` configured to exclude sensitive files
+- No data collection or external calls
+- All calculations are local
 
-## 📝 File Structure
+## 📁 File Structure
 
 ```
 D:\Calculator/
 ├── calculator.py           # Main application
-├── calculator_history.json # Auto-generated history file
-├── requirements.txt        # Python dependencies
+├── calculator_history.json # Auto-generated history
+├── requirements.txt        # Dependencies
 ├── README.md              # This file
 └── .gitignore             # Git ignore rules
 ```
 
 ## 🐛 Troubleshooting
 
-### Issue: "Error: Invalid expression"
-- Check for mismatched parentheses
+**Issue: "Error: Invalid expression"**
+- Check for balanced parentheses
 - Ensure all operators are valid
-- Try using the Scientific tab for complex functions
+- Verify decimal numbers are formatted correctly
 
-### Issue: History not saving
+**Issue: Theme doesn't change**
+- Close and reopen the calculator
+- Check if dark/light mode toggle is working
+
+**Issue: History not loading**
+- Ensure `calculator_history.json` exists
 - Check write permissions in the folder
-- Ensure `calculator_history.json` is not corrupted
-- Delete and recreate the file if needed
 
-### Issue: Keyboard not responding
-- Click on the calculator window to ensure it has focus
-- Some shortcuts may conflict with OS shortcuts
+## 🎯 Features
 
-## 🎯 Future Enhancements
-
-- Unit converter (length, weight, temperature)
-- Statistics calculations (mean, median, std dev)
-- Graph plotting for functions
-- Custom function definitions
-- Dark mode animation
-- Sound effects for operations
+✅ Classic calculator design  
+✅ Scientific functions in sidebar  
+✅ Memory operations  
+✅ Base conversion (HEX, BIN, OCT)  
+✅ Dark/Light theme toggle  
+✅ Calculation history  
+✅ Keyboard support  
+✅ Undo/Redo functionality  
+✅ Persistent history (JSON)  
+✅ No external dependencies  
 
 ## 📄 License
 
 Free to use and modify!
 
-## 👨‍💻 Author
-
-Created with PyQt5 - A responsive, modern Python calculator
-
 ---
 
-**Enjoy your advanced calculator! 🎉**
+**Enjoy your modern calculator! 🎉**
 
