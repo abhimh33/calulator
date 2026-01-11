@@ -132,14 +132,14 @@ python calculator.py
 C      ÷      %      +
 7      8      9      ×
 4      5      6      -
-1      2      3      +
+1      2      3      ⌫
 0           .        =
 (      )           🌙/☀️
 ```
 
 **Legend:**
-- **Gray buttons**: Numbers (0-9), Decimal (.), Functions
-- **Light gray buttons**: Clear (C), Division (÷), Percentage (%)
+- **Dark gray buttons**: Numbers (0-9), Decimal (.)
+- **Light gray buttons**: Clear (C), Division (÷), Percentage (%), Backspace (⌫)
 - **Orange buttons**: Operators (+, -, ×, =)
 - **Last row**: Parentheses and theme toggle
 

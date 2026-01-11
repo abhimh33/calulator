@@ -155,13 +155,13 @@ class EnhancedCalculator(QMainWindow):
         row3.addWidget(CalcButton("-", lambda: self.append_operator("-"), "operator"))
         grid.addLayout(row3)
         
-        # Row 4: 1, 2, 3, +
+        # Row 4: 1, 2, 3, Backspace
         row4 = QHBoxLayout()
         row4.setSpacing(8)
         row4.addWidget(CalcButton("1", lambda: self.append_value("1"), "number"))
         row4.addWidget(CalcButton("2", lambda: self.append_value("2"), "number"))
         row4.addWidget(CalcButton("3", lambda: self.append_value("3"), "number"))
-        row4.addWidget(CalcButton("+", lambda: self.append_operator("+"), "operator"))
+        row4.addWidget(CalcButton("⌫", self.delete_last, "function"))
         grid.addLayout(row4)
         
         # Row 5: 0 (wide), ., =
